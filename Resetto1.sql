@@ -1,0 +1,1 @@
+﻿--DBCC CHECKIDENT ('items', RESEED, 1);
