@@ -33,6 +33,8 @@ namespace InventorySystem {
 			LoadDatabases();
 			ConnectBtn->Enabled = false;
 			tableSelectBox->Enabled = false;
+			AddTBBtn->Enabled = false; // Disable on start
+			//DelTBBtn->Enabled = false;
 
 			//	 Allow users to edit cells
 			dataGridView1->ReadOnly = false;
@@ -86,6 +88,10 @@ namespace InventorySystem {
 			dataGridView1->SelectionMode = DataGridViewSelectionMode::FullRowSelect;
 			dataGridView1->MultiSelect = true; // Optional: Allow only one row to be selected at a time
 
+			//User Label
+			String^ usernameFormatted = user->username->Substring(0, 1)->ToUpper() + user->username->Substring(1)->ToLower();
+			labelUser->Text = "Welcome, " + usernameFormatted + "!";
+
 			this->currentUser = user; //lgout lgin
 
 
@@ -93,6 +99,9 @@ namespace InventorySystem {
 			//TODO: Add the constructor code here
 			//
 		}
+
+	private:
+		bool IsDatabaseConnected(); // Function to check database connection
 
 	protected:
 		/// <summary>
@@ -123,14 +132,15 @@ namespace InventorySystem {
 	private: Guna::UI2::WinForms::Guna2ComboBox^ tableSelectBox;
 	private: Guna::UI2::WinForms::Guna2Button^ DeleteBtn;
 	private: Guna::UI2::WinForms::Guna2Button^ DelTBBtn;
-
 	private: Guna::UI2::WinForms::Guna2Button^ AddTBBtn;
-
-
-
+	private: System::Windows::Forms::Label^ labelUser;
+	private: System::Windows::Forms::Label^ labelDesc;
+	private: Guna::UI2::WinForms::Guna2Button^ vAllBtn;
+private: Guna::UI2::WinForms::Guna2Button^ AddTBBtnSPHV;
 
 
 	private: System::Windows::Forms::Label^ labelDate;
+
 
 	private: System::Void LoadDatabases() {
 		dataSelectBox->Items->Clear(); // Clear previous entries to avoid duplicates
@@ -194,6 +204,10 @@ namespace InventorySystem {
 			this->DeleteBtn = (gcnew Guna::UI2::WinForms::Guna2Button());
 			this->AddTBBtn = (gcnew Guna::UI2::WinForms::Guna2Button());
 			this->DelTBBtn = (gcnew Guna::UI2::WinForms::Guna2Button());
+			this->labelUser = (gcnew System::Windows::Forms::Label());
+			this->labelDesc = (gcnew System::Windows::Forms::Label());
+			this->vAllBtn = (gcnew Guna::UI2::WinForms::Guna2Button());
+			this->AddTBBtnSPHV = (gcnew Guna::UI2::WinForms::Guna2Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->guna2PictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
@@ -492,7 +506,7 @@ namespace InventorySystem {
 			this->AddTBBtn->Location = System::Drawing::Point(488, 95);
 			this->AddTBBtn->Name = L"AddTBBtn";
 			this->AddTBBtn->ShadowDecoration->Parent = this->AddTBBtn;
-			this->AddTBBtn->Size = System::Drawing::Size(144, 38);
+			this->AddTBBtn->Size = System::Drawing::Size(114, 38);
 			this->AddTBBtn->TabIndex = 37;
 			this->AddTBBtn->Text = L"Add Table";
 			this->AddTBBtn->TextAlign = System::Windows::Forms::HorizontalAlignment::Left;
@@ -510,20 +524,85 @@ namespace InventorySystem {
 			this->DelTBBtn->HoverState->Parent = this->DelTBBtn;
 			this->DelTBBtn->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"DelTBBtn.Image")));
 			this->DelTBBtn->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
-			this->DelTBBtn->Location = System::Drawing::Point(641, 95);
+			this->DelTBBtn->Location = System::Drawing::Point(728, 95);
 			this->DelTBBtn->Name = L"DelTBBtn";
 			this->DelTBBtn->ShadowDecoration->Parent = this->DelTBBtn;
-			this->DelTBBtn->Size = System::Drawing::Size(144, 38);
+			this->DelTBBtn->Size = System::Drawing::Size(114, 38);
 			this->DelTBBtn->TabIndex = 38;
 			this->DelTBBtn->Text = L"Delete Table";
 			this->DelTBBtn->TextAlign = System::Windows::Forms::HorizontalAlignment::Left;
 			this->DelTBBtn->Click += gcnew System::EventHandler(this, &MainForm2::DelTBBtn_Click);
+			// 
+			// labelUser
+			// 
+			this->labelUser->AutoSize = true;
+			this->labelUser->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->labelUser->Location = System::Drawing::Point(1273, 44);
+			this->labelUser->Name = L"labelUser";
+			this->labelUser->Size = System::Drawing::Size(57, 20);
+			this->labelUser->TabIndex = 39;
+			this->labelUser->Text = L"label2";
+			// 
+			// labelDesc
+			// 
+			this->labelDesc->AutoSize = true;
+			this->labelDesc->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->labelDesc->ForeColor = System::Drawing::SystemColors::AppWorkspace;
+			this->labelDesc->Location = System::Drawing::Point(1274, 64);
+			this->labelDesc->Name = L"labelDesc";
+			this->labelDesc->Size = System::Drawing::Size(237, 13);
+			this->labelDesc->TabIndex = 40;
+			this->labelDesc->Text = L"Inventory organized, business optimized.";
+			// 
+			// vAllBtn
+			// 
+			this->vAllBtn->Animated = true;
+			this->vAllBtn->BorderRadius = 8;
+			this->vAllBtn->CheckedState->Parent = this->vAllBtn;
+			this->vAllBtn->CustomImages->Parent = this->vAllBtn;
+			this->vAllBtn->FillColor = System::Drawing::Color::Transparent;
+			this->vAllBtn->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9));
+			this->vAllBtn->ForeColor = System::Drawing::Color::White;
+			this->vAllBtn->HoverState->Parent = this->vAllBtn;
+			this->vAllBtn->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"vAllBtn.Image")));
+			this->vAllBtn->Location = System::Drawing::Point(791, 58);
+			this->vAllBtn->Name = L"vAllBtn";
+			this->vAllBtn->ShadowDecoration->Parent = this->vAllBtn;
+			this->vAllBtn->Size = System::Drawing::Size(27, 29);
+			this->vAllBtn->TabIndex = 41;
+			this->vAllBtn->Click += gcnew System::EventHandler(this, &MainForm2::vAllBtn_Click);
+			// 
+			// AddTBBtnSPHV
+			// 
+			this->AddTBBtnSPHV->BackColor = System::Drawing::Color::Transparent;
+			this->AddTBBtnSPHV->BorderRadius = 7;
+			this->AddTBBtnSPHV->CheckedState->Parent = this->AddTBBtnSPHV;
+			this->AddTBBtnSPHV->CustomImages->Parent = this->AddTBBtnSPHV;
+			this->AddTBBtnSPHV->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9, System::Drawing::FontStyle::Bold));
+			this->AddTBBtnSPHV->ForeColor = System::Drawing::Color::White;
+			this->AddTBBtnSPHV->HoverState->Parent = this->AddTBBtnSPHV;
+			this->AddTBBtnSPHV->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"AddTBBtnSPHV.Image")));
+			this->AddTBBtnSPHV->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
+			this->AddTBBtnSPHV->Location = System::Drawing::Point(608, 95);
+			this->AddTBBtnSPHV->Name = L"AddTBBtnSPHV";
+			this->AddTBBtnSPHV->ShadowDecoration->Parent = this->AddTBBtnSPHV;
+			this->AddTBBtnSPHV->Size = System::Drawing::Size(114, 38);
+			this->AddTBBtnSPHV->TabIndex = 42;
+			this->AddTBBtnSPHV->Text = L"+ SPHV";
+			this->AddTBBtnSPHV->TextAlign = System::Windows::Forms::HorizontalAlignment::Left;
+			this->AddTBBtnSPHV->Click += gcnew System::EventHandler(this, &MainForm2::AddTBBtnSPHV_Click);
 			// 
 			// MainForm2
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1918, 1072);
+			this->Controls->Add(this->AddTBBtnSPHV);
+			this->Controls->Add(this->vAllBtn);
+			this->Controls->Add(this->labelDesc);
+			this->Controls->Add(this->labelUser);
 			this->Controls->Add(this->DelTBBtn);
 			this->Controls->Add(this->AddTBBtn);
 			this->Controls->Add(this->DeleteBtn);
@@ -561,7 +640,7 @@ namespace InventorySystem {
 
 			String^ selectedDB = dataSelectBox->SelectedItem->ToString();
 			String^ selectedTable = tableSelectBox->SelectedItem->ToString();
-			String^ connString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=" + selectedDB + ";Integrated Security=True;";
+			String^ connString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=" + selectedDB + ";Integrated Security=True;"; //192.168.3.108
 
 			try {
 				SqlConnection^ sqlConn = gcnew SqlConnection(connString);
@@ -637,5 +716,7 @@ namespace InventorySystem {
 	void RefBtn_Click(System::Object^ sender, System::EventArgs^ e);
 	void AddTBBtn_Click(System::Object^ sender, System::EventArgs^ e);
 	void DelTBBtn_Click(System::Object^ sender, System::EventArgs^ e);
+	void vAllBtn_Click(System::Object^ sender, System::EventArgs^ e);
+	void AddTBBtnSPHV_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }

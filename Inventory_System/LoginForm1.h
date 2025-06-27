@@ -157,10 +157,12 @@ namespace InventorySystem {
 			this->btnLogin2->BorderRadius = 18;
 			this->btnLogin2->CheckedState->Parent = this->btnLogin2;
 			this->btnLogin2->CustomImages->Parent = this->btnLogin2;
+			this->btnLogin2->FillColor2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(94)), static_cast<System::Int32>(static_cast<System::Byte>(148)),
+				static_cast<System::Int32>(static_cast<System::Byte>(255)));
 			this->btnLogin2->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9));
 			this->btnLogin2->ForeColor = System::Drawing::Color::White;
 			this->btnLogin2->HoverState->Parent = this->btnLogin2;
-			this->btnLogin2->Location = System::Drawing::Point(347, 231);
+			this->btnLogin2->Location = System::Drawing::Point(381, 231);
 			this->btnLogin2->Name = L"btnLogin2";
 			this->btnLogin2->ShadowDecoration->Parent = this->btnLogin2;
 			this->btnLogin2->Size = System::Drawing::Size(100, 38);
@@ -175,10 +177,14 @@ namespace InventorySystem {
 			this->btnCancel2->BorderRadius = 18;
 			this->btnCancel2->CheckedState->Parent = this->btnCancel2;
 			this->btnCancel2->CustomImages->Parent = this->btnCancel2;
+			this->btnCancel2->FillColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(79)),
+				static_cast<System::Int32>(static_cast<System::Byte>(95)));
+			this->btnCancel2->FillColor2 = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(79)),
+				static_cast<System::Int32>(static_cast<System::Byte>(95)));
 			this->btnCancel2->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9));
 			this->btnCancel2->ForeColor = System::Drawing::Color::White;
 			this->btnCancel2->HoverState->Parent = this->btnCancel2;
-			this->btnCancel2->Location = System::Drawing::Point(523, 231);
+			this->btnCancel2->Location = System::Drawing::Point(495, 231);
 			this->btnCancel2->Name = L"btnCancel2";
 			this->btnCancel2->ShadowDecoration->Parent = this->btnCancel2;
 			this->btnCancel2->Size = System::Drawing::Size(100, 38);
@@ -200,9 +206,9 @@ namespace InventorySystem {
 			this->label1->ImageAlign = System::Drawing::ContentAlignment::TopLeft;
 			this->label1->Location = System::Drawing::Point(416, 41);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(116, 25);
+			this->label1->Size = System::Drawing::Size(122, 25);
 			this->label1->TabIndex = 10;
-			this->label1->Text = L"User Login";
+			this->label1->Text = L"User Login ";
 			// 
 			// guna2PictureBox1
 			// 

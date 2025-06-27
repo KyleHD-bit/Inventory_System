@@ -15,6 +15,18 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_026D76267E6CE3C4BBAF104E216D3629"
+        "OwnerKey" = "8:_69C1C67EECA042998043A08BC46C9009"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_07160A9552A108CD12EDB04DC93E7924"
+        "OwnerKey" = "8:_69C1C67EECA042998043A08BC46C9009"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_10F8959973658B55170AB40D56E509DD"
         "OwnerKey" = "8:_F9069897B736E871B3E15C5837F5EF38"
         "MsmSig" = "8:_UNDEFINED"
@@ -27,13 +39,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_2FDEB21C1E63243A6596A0397286B8E4"
-        "OwnerKey" = "8:_69C1C67EECA042998043A08BC46C9009"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_3146945F45B55BEC5F1F42359C8D0A4D"
+        "MsmKey" = "8:_204420BF025A62989AC9A5CA6D781266"
         "OwnerKey" = "8:_69C1C67EECA042998043A08BC46C9009"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -41,6 +47,24 @@
         {
         "MsmKey" = "8:_31AE30E6C2F84EA183CB513E9A89DFCF"
         "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_4BA2FBBB31D73BFBABC912624B22A260"
+        "OwnerKey" = "8:_69C1C67EECA042998043A08BC46C9009"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_512EB6376EA6FC9919122C3448B1A983"
+        "OwnerKey" = "8:_69C1C67EECA042998043A08BC46C9009"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_5E1F187D52D88B14C6AD636CD0CF2FA0"
+        "OwnerKey" = "8:_4BA2FBBB31D73BFBABC912624B22A260"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -69,13 +93,19 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_974A3EB96E72EC30672FC5272A5923B1"
+        "MsmKey" = "8:_B840E3A304C28DC71047B8918D0605C7"
         "OwnerKey" = "8:_69C1C67EECA042998043A08BC46C9009"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_B49690064EE13A5A08DA42EDC49B8BB0"
+        "MsmKey" = "8:_BB716D21A1C6583BF82513AFC33B8543"
+        "OwnerKey" = "8:_5E1F187D52D88B14C6AD636CD0CF2FA0"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_C16A1F52149158C8021A642CFCB8A5F5"
         "OwnerKey" = "8:_69C1C67EECA042998043A08BC46C9009"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -87,14 +117,14 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_D3C11A14F21FB83729543D7A1BCB2CB6"
+        "MsmKey" = "8:_D746A21C5E819C205DB3BE00C1D8D4CE"
         "OwnerKey" = "8:_69C1C67EECA042998043A08BC46C9009"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_D746A21C5E819C205DB3BE00C1D8D4CE"
-        "OwnerKey" = "8:_69C1C67EECA042998043A08BC46C9009"
+        "MsmKey" = "8:_E4B9FFF85A90F1219DD6B311ACE6CD7A"
+        "OwnerKey" = "8:_5E1F187D52D88B14C6AD636CD0CF2FA0"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -106,13 +136,37 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_17BB0C3944733A06B60FDBFD2B40E0B0"
+        "OwnerKey" = "8:_69C1C67EECA042998043A08BC46C9009"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_69C1C67EECA042998043A08BC46C9009"
+        "OwnerKey" = "8:_4BA2FBBB31D73BFBABC912624B22A260"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_5E1F187D52D88B14C6AD636CD0CF2FA0"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_E4B9FFF85A90F1219DD6B311ACE6CD7A"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_BB716D21A1C6583BF82513AFC33B8543"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_C16A1F52149158C8021A642CFCB8A5F5"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -139,6 +193,12 @@
         "OwnerKey" = "8:_C39269B98B1CDD6AC1582D9B6DBB7D9C"
         "MsmSig" = "8:_UNDEFINED"
         }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_17BB0C3944733A06B60FDBFD2B40E0B0"
+        "MsmSig" = "8:_UNDEFINED"
+        }
     }
     "Configurations"
     {
@@ -157,6 +217,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -173,6 +241,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -202,6 +278,46 @@
         }
         "File"
         {
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_026D76267E6CE3C4BBAF104E216D3629"
+            {
+            "SourcePath" = "8:api-ms-win-crt-runtime-l1-1-0.dll"
+            "TargetName" = "8:api-ms-win-crt-runtime-l1-1-0.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_78D04D4D98E246D4ADE5FF9A92C23715"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_07160A9552A108CD12EDB04DC93E7924"
+            {
+            "SourcePath" = "8:api-ms-win-crt-locale-l1-1-0.dll"
+            "TargetName" = "8:api-ms-win-crt-locale-l1-1-0.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_78D04D4D98E246D4ADE5FF9A92C23715"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_10F8959973658B55170AB40D56E509DD"
             {
             "AssemblyRegister" = "3:1"
@@ -264,30 +380,10 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2FDEB21C1E63243A6596A0397286B8E4"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_204420BF025A62989AC9A5CA6D781266"
             {
             "SourcePath" = "8:api-ms-win-crt-heap-l1-1-0.dll"
             "TargetName" = "8:api-ms-win-crt-heap-l1-1-0.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_78D04D4D98E246D4ADE5FF9A92C23715"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_3146945F45B55BEC5F1F42359C8D0A4D"
-            {
-            "SourcePath" = "8:api-ms-win-crt-locale-l1-1-0.dll"
-            "TargetName" = "8:api-ms-win-crt-locale-l1-1-0.dll"
             "Tag" = "8:"
             "Folder" = "8:_78D04D4D98E246D4ADE5FF9A92C23715"
             "Condition" = "8:"
@@ -322,6 +418,88 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_4BA2FBBB31D73BFBABC912624B22A260"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_4BA2FBBB31D73BFBABC912624B22A260"
+                    {
+                    "Name" = "8:Microsoft.ReportViewer.WinForms.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Microsoft.ReportViewer.WinForms.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_78D04D4D98E246D4ADE5FF9A92C23715"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_512EB6376EA6FC9919122C3448B1A983"
+            {
+            "SourcePath" = "8:api-ms-win-crt-math-l1-1-0.dll"
+            "TargetName" = "8:api-ms-win-crt-math-l1-1-0.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_78D04D4D98E246D4ADE5FF9A92C23715"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_5E1F187D52D88B14C6AD636CD0CF2FA0"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_5E1F187D52D88B14C6AD636CD0CF2FA0"
+                    {
+                    "Name" = "8:Microsoft.ReportViewer.Common.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Microsoft.ReportViewer.Common.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_78D04D4D98E246D4ADE5FF9A92C23715"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_8D57F60B9CDCBDE148EC5EBD83E9EC36"
@@ -375,10 +553,10 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_974A3EB96E72EC30672FC5272A5923B1"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B840E3A304C28DC71047B8918D0605C7"
             {
-            "SourcePath" = "8:api-ms-win-crt-runtime-l1-1-0.dll"
-            "TargetName" = "8:api-ms-win-crt-runtime-l1-1-0.dll"
+            "SourcePath" = "8:api-ms-win-crt-stdio-l1-1-0.dll"
+            "TargetName" = "8:api-ms-win-crt-stdio-l1-1-0.dll"
             "Tag" = "8:"
             "Folder" = "8:_78D04D4D98E246D4ADE5FF9A92C23715"
             "Condition" = "8:"
@@ -395,10 +573,52 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B49690064EE13A5A08DA42EDC49B8BB0"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_BB716D21A1C6583BF82513AFC33B8543"
             {
-            "SourcePath" = "8:api-ms-win-crt-stdio-l1-1-0.dll"
-            "TargetName" = "8:api-ms-win-crt-stdio-l1-1-0.dll"
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_BB716D21A1C6583BF82513AFC33B8543"
+                    {
+                    "Name" = "8:Microsoft.ReportViewer.DataVisualization.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Microsoft.ReportViewer.DataVisualization.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_78D04D4D98E246D4ADE5FF9A92C23715"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_C16A1F52149158C8021A642CFCB8A5F5"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:FastReport, Version=2024.2.14.0, Culture=neutral, PublicKeyToken=5ceb240df42bf6e8, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_C16A1F52149158C8021A642CFCB8A5F5"
+                    {
+                    "Name" = "8:FastReport.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:FastReport.dll"
+            "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_78D04D4D98E246D4ADE5FF9A92C23715"
             "Condition" = "8:"
@@ -446,10 +666,10 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D3C11A14F21FB83729543D7A1BCB2CB6"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D746A21C5E819C205DB3BE00C1D8D4CE"
             {
-            "SourcePath" = "8:api-ms-win-crt-math-l1-1-0.dll"
-            "TargetName" = "8:api-ms-win-crt-math-l1-1-0.dll"
+            "SourcePath" = "8:VCRUNTIME140.dll"
+            "TargetName" = "8:VCRUNTIME140.dll"
             "Tag" = "8:"
             "Folder" = "8:_78D04D4D98E246D4ADE5FF9A92C23715"
             "Condition" = "8:"
@@ -466,10 +686,21 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D746A21C5E819C205DB3BE00C1D8D4CE"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_E4B9FFF85A90F1219DD6B311ACE6CD7A"
             {
-            "SourcePath" = "8:VCRUNTIME140.dll"
-            "TargetName" = "8:VCRUNTIME140.dll"
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_E4B9FFF85A90F1219DD6B311ACE6CD7A"
+                    {
+                    "Name" = "8:Microsoft.ReportViewer.ProcessingObjectModel.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Microsoft.ReportViewer.ProcessingObjectModel.dll"
+            "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_78D04D4D98E246D4ADE5FF9A92C23715"
             "Condition" = "8:"

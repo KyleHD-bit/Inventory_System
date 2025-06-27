@@ -585,7 +585,7 @@ namespace InventorySystem {
 
 
 	public: void RefreshData() {
-		String^ connectionString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=Inventory_System;Integrated Security=True;"; //localhost
+		String^ connectionString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=Inventory_System;Integrated Security=True;"; //192.168.128.13
 		SqlConnection^ connection = gcnew SqlConnection(connectionString);
 		SqlDataAdapter^ dataAdapter = gcnew SqlDataAdapter("SELECT * FROM items", connection);
 		DataTable^ dataTable = gcnew DataTable();

@@ -227,6 +227,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AddForm.cpp" />
+    <ClCompile Include="AddTableForm.cpp" />
     <ClCompile Include="EditForm.cpp" />
     <ClCompile Include="GeneralFund.cpp" />
     <ClCompile Include="ICS.cpp" />
@@ -237,9 +238,13 @@
     <ClCompile Include="program.cpp" />
     <ClCompile Include="SelectDB.cpp" />
     <ClCompile Include="TPBUTTON.cpp" />
+    <ClCompile Include="ViewAll.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AddForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="AddTableForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="EditForm.h">
@@ -272,10 +277,16 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="User.h" />
+    <ClInclude Include="ViewAll.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AddForm.resx">
       <DependentUpon>AddForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddTableForm.resx">
+      <DependentUpon>AddTableForm.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditForm.resx">
       <DependentUpon>EditForm.h</DependentUpon>
@@ -306,6 +317,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SelectDB.resx">
       <DependentUpon>SelectDB.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewAll.resx">
+      <DependentUpon>ViewAll.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

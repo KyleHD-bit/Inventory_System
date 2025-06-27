@@ -3,11 +3,14 @@
 #include "LoginForm1.h"
 #include "NotificationForm.h"
 #include "LoadingForm.h"
+#include "AddTableForm.h"
+#include "ViewAll.h"
+
 
 using namespace System::Collections::Generic;
 
 
-//##################### LOGOUT #####################
+// Logout Button
 
 void InventorySystem::MainForm2::LogOutBtn_Click(System::Object^ sender, System::EventArgs^ e) { //debug here!
     /*NotificationForm^ notifyForm = gcnew NotificationForm("Logout Successful!", "Please login again!");
@@ -26,7 +29,8 @@ void InventorySystem::MainForm2::LogOutBtn_Click(System::Object^ sender, System:
 } 
 
 
-//##################### CONNECT #####################
+// Connect to Database BTN
+
 void InventorySystem::MainForm2::ConnectBtn_Click(System::Object^ sender, System::EventArgs^ e) {
     if (dataSelectBox->SelectedIndex == -1) {
         MessageBox::Show("Please select a database!", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
@@ -35,7 +39,7 @@ void InventorySystem::MainForm2::ConnectBtn_Click(System::Object^ sender, System
 
     // Get the selected database name
     String^ selectedDB = dataSelectBox->SelectedItem->ToString();
-    String^ connString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=" + selectedDB + ";Integrated Security=True;";
+    String^ connString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=" + selectedDB + ";Integrated Security=True;"; //192.168.3.108
 
     // Loading Screen
     InventorySystem::LoadingForm^ loadingScreen = gcnew InventorySystem::LoadingForm();
@@ -81,13 +85,30 @@ void InventorySystem::MainForm2::ConnectBtn_Click(System::Object^ sender, System
 }
 
 
-//##################### DATA SELECTBOX #####################
+// Data SelectBox
 void InventorySystem::MainForm2::dataSelectBox_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
     if (dataSelectBox->SelectedIndex != -1) { // If a valid item is selected
-        ConnectBtn->Enabled = true;  // Enable the Connect button ^
+        ConnectBtn->Enabled = true;  //  Enable the "Connect" button
+
+        if (IsDatabaseConnected()) {
+            AddTBBtn->Enabled = true;  //  Enable "Add Table" button only if connected
+            if (tableSelectBox->SelectedIndex != -1) {
+                DelTBBtn->Enabled = true; //  Enable "Delete Table" button if a table is selected
+            }
+            else {
+               // DelTBBtn->Enabled = false; //  Disable if no table selected
+            }
+        }
+        else {
+            AddTBBtn->Enabled = false; //  Disable "Add Table" button if not connected
+            //DelTBBtn->Enabled = false; //  Also disable "Delete Table" button
+        }
     }
     else {
-        ConnectBtn->Enabled = false; // Keep it disabled
+        //  If no database is selected, disable all related buttons
+        ConnectBtn->Enabled = false;
+        AddTBBtn->Enabled = false;
+       // DelTBBtn->Enabled = false;
     }
 }
 
@@ -102,7 +123,7 @@ void InventorySystem::MainForm2::tableSelectBox_SelectedIndexChanged(System::Obj
     // Get the selected database and table name
     String^ selectedDB = dataSelectBox->SelectedItem->ToString();
     String^ selectedTable = tableSelectBox->SelectedItem->ToString();
-    String^ connString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=" + selectedDB + ";Integrated Security=True;";
+    String^ connString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=" + selectedDB + ";Integrated Security=True;"; //192.168.3.108
 
     try {
         SqlConnection^ sqlConn = gcnew SqlConnection(connString);
@@ -143,7 +164,7 @@ void InventorySystem::MainForm2::tableSelectBox_SelectedIndexChanged(System::Obj
 }
 
 
-//##################### SAVE #####################
+// Save Button
 
 void InventorySystem::MainForm2::SaveBtn_Click(System::Object^ sender, System::EventArgs^ e) {
     if (dataGridView1->DataSource == nullptr) return; // Ensure there is data
@@ -151,7 +172,7 @@ void InventorySystem::MainForm2::SaveBtn_Click(System::Object^ sender, System::E
 
     String^ selectedDB = dataSelectBox->SelectedItem->ToString();
     String^ selectedTable = tableSelectBox->SelectedItem->ToString();
-    String^ connString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=" + selectedDB + ";Integrated Security=True;";
+    String^ connString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=" + selectedDB + ";Integrated Security=True;"; //192.168.3.108
 
     try {
         SqlConnection^ sqlConn = gcnew SqlConnection(connString);
@@ -208,14 +229,14 @@ void InventorySystem::MainForm2::SaveBtn_Click(System::Object^ sender, System::E
     }
 }
 
-//##################### ADD #####################
+// Add Button
 
 void InventorySystem::MainForm2::AddBtn_Click(System::Object^ sender, System::EventArgs^ e) {
     if (tableSelectBox->SelectedIndex == -1) return; // Ensure a table is selected
 
     String^ selectedDB = dataSelectBox->SelectedItem->ToString();
     String^ selectedTable = tableSelectBox->SelectedItem->ToString();
-    String^ connString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=" + selectedDB + ";Integrated Security=True;";
+    String^ connString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=" + selectedDB + ";Integrated Security=True;"; //192.168.3.108
 
     try {
         SqlConnection^ sqlConn = gcnew SqlConnection(connString);
@@ -262,7 +283,7 @@ void InventorySystem::MainForm2::AddBtn_Click(System::Object^ sender, System::Ev
 }
 
 
-//##################### DELETE #####################
+// Delete Button
 
 void InventorySystem::MainForm2::DeleteBtn_Click(System::Object^ sender, System::EventArgs^ e) {
     if (dataGridView1->SelectedRows->Count == 0) {
@@ -283,7 +304,7 @@ void InventorySystem::MainForm2::DeleteBtn_Click(System::Object^ sender, System:
 
     String^ selectedDB = dataSelectBox->SelectedItem->ToString();
     String^ selectedTable = tableSelectBox->SelectedItem->ToString();
-    String^ connString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=" + selectedDB + ";Integrated Security=True;";
+    String^ connString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=" + selectedDB + ";Integrated Security=True;"; //192.168.3.108 - tres. IP :: def - localhost no 1433
 
     try {
         SqlConnection^ sqlConn = gcnew SqlConnection(connString);
@@ -339,6 +360,9 @@ void InventorySystem::MainForm2::DeleteBtn_Click(System::Object^ sender, System:
     }
 }
 
+
+// Refresh Button
+
 void InventorySystem::MainForm2::RefBtn_Click(System::Object^ sender, System::EventArgs^ e) {
     // Show Loading Screen
     InventorySystem::LoadingForm^ loadingScreen = gcnew InventorySystem::LoadingForm();
@@ -357,31 +381,185 @@ void InventorySystem::MainForm2::RefBtn_Click(System::Object^ sender, System::Ev
 
 
 
-// Add Table Button
-void InventorySystem::MainForm2::AddTBBtn_Click(System::Object^ sender, System::EventArgs^ e) {
+// IsDataBaseConnected
 
+bool InventorySystem::MainForm2::IsDatabaseConnected() {
+    try {
+        String^ selectedDB = dataSelectBox->SelectedItem != nullptr ? dataSelectBox->SelectedItem->ToString() : "";
+        if (String::IsNullOrWhiteSpace(selectedDB)) return false;
+
+        String^ connString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=" + selectedDB + ";Integrated Security=True;"; //192.168.3.108
+        SqlConnection^ sqlConn = gcnew SqlConnection(connString);
+        sqlConn->Open();
+        sqlConn->Close();
+
+        return true; //  Connection is valid
+    }
+    catch (Exception^) {
+        return false; //  Connection failed
+    }
+}
+
+
+// Add Table Button for SPHV
+void InventorySystem::MainForm2::AddTBBtnSPHV_Click(System::Object^ sender, System::EventArgs^ e) {
+
+    // Add Only If SPHV Database is Connected - Greyed if Not
+
+    // Add Table format for SPHV
 
 }
+
+
+
+
+
+
+
+
+
+
+
+// Add Table Button
+
+void InventorySystem::MainForm2::AddTBBtn_Click(System::Object^ sender, System::EventArgs^ e) {
+    if (!IsDatabaseConnected()) {
+        MessageBox::Show("Not connected to a database. Please select a valid database first.", "Connection Error", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+        return;
+    }
+
+    AddTableForm^ addTableForm = gcnew AddTableForm();
+    if (addTableForm->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
+        String^ tableName = addTableForm->TableName;
+        if (String::IsNullOrWhiteSpace(tableName)) {
+            MessageBox::Show("Table name cannot be empty.", "Error", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+            return;
+        }
+
+        String^ selectedDB = dataSelectBox->SelectedItem->ToString();
+        String^ connString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=" + selectedDB + ";Integrated Security=True;"; //192.168.3.108
+
+        String^ createTableQuery =
+            "CREATE TABLE [" + tableName + "] ("
+            "[Article] NVARCHAR(255),"
+            "[DESCRIPTION] NVARCHAR(MAX),"
+            "[Property No#] FLOAT,"
+            "[DATE AQUIRED] DATE,"
+            "[UNIT OF MEASURE] NVARCHAR(255),"
+            "[Unit Value] FLOAT,"
+            "[ACCTBLE OFFICER] NVARCHAR(255),"
+            "[LOCATION] NVARCHAR(255),"
+            "[Balance Per Qty#] FLOAT,"
+            "[ON HAND] FLOAT,"
+            "[SHORTAGE/OVER] FLOAT,"
+            "[REMARKS] NVARCHAR(255)"
+            ");";
+
+        try {
+            SqlConnection^ sqlConn = gcnew SqlConnection(connString);
+            sqlConn->Open();
+
+            SqlCommand^ cmd = gcnew SqlCommand(createTableQuery, sqlConn);
+            cmd->ExecuteNonQuery();
+
+            sqlConn->Close();
+            MessageBox::Show("Table '" + tableName + "' created successfully!", "Success", MessageBoxButtons::OK, MessageBoxIcon::Information);
+        }
+        catch (Exception^ ex) {
+            MessageBox::Show("Error creating table: " + ex->Message, "Table Creation Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
+        }
+    }
+    
+    NotificationForm^ notifyForm = gcnew NotificationForm("Successful!", "Added New Table!");
+    notifyForm->Show();
+    
+
+}
+
+
 
 // Remove Table Button
+
 void InventorySystem::MainForm2::DelTBBtn_Click(System::Object^ sender, System::EventArgs^ e) {
+    // Ensure a database is selected and connected
+    if (!IsDatabaseConnected()) {
+        MessageBox::Show("No database connection. Please connect first.", "Delete Table Error",
+            MessageBoxButtons::OK, MessageBoxIcon::Warning);
+        return;
+    }
+
+    // Ensure a table is selected
+    if (tableSelectBox->SelectedIndex == -1) {
+        MessageBox::Show("Please select a table to delete.", "Delete Table Error",
+            MessageBoxButtons::OK, MessageBoxIcon::Warning);
+        return;
+    }
+
+    String^ selectedDB = dataSelectBox->SelectedItem->ToString();
+    String^ selectedTable = tableSelectBox->SelectedItem->ToString();
+    String^ connString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=" + selectedDB + ";Integrated Security=True;"; //192.168.3.108
+
+    // Confirm before deleting
+    if (MessageBox::Show("Are you sure you want to delete the table: " + selectedTable + "?", "Confirm Delete",
+        MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::No) {
+        return;
+    }
+
+    try {
+        SqlConnection^ sqlConn = gcnew SqlConnection(connString);
+        sqlConn->Open();
+
+        // Delete (Drop) Table Query
+        String^ deleteQuery = "DROP TABLE [" + selectedTable + "]";
+        SqlCommand^ cmd = gcnew SqlCommand(deleteQuery, sqlConn);
+        cmd->ExecuteNonQuery();
+
+        sqlConn->Close();
+
+        // Remove table from dropdown list
+        tableSelectBox->Items->Remove(selectedTable);
+
+        MessageBox::Show("Table '" + selectedTable + "' deleted successfully!", "Success",
+            MessageBoxButtons::OK, MessageBoxIcon::Information);
+    }
+    catch (Exception^ ex) {
+        MessageBox::Show("Error deleting table: " + ex->Message, "Delete Table Error",
+            MessageBoxButtons::OK, MessageBoxIcon::Error);
+    }
+    
+    NotificationForm^ notifyForm = gcnew NotificationForm("Sucessful!", "Table removed!");
+    notifyForm->Show();
+    
 
 }
 
 
 
-/* patya na lng ko please, ayoko na. I give up!
+// View All Database
 
-pain, paghati, kirot, sakit, ouch, lungkot, iyak,
-luha, hina, cry, hurt, dalamhati, lumbay, sawi,
-puot, daing, pagtangis, hapdi.
+void InventorySystem::MainForm2::vAllBtn_Click(System::Object^ sender, System::EventArgs^ e){
+
+    List<String^>^ selectedDatabases = gcnew List<String^>();
+
+    for each (Object ^ item in dataSelectBox->Items) {
+        selectedDatabases->Add(item->ToString());
+    }
+
+    InventorySystem::ViewAll^ viewAllForm = gcnew InventorySystem::ViewAll(selectedDatabases); // Correct declaration
+    viewAllForm->Show(); // Show the form
+
+
+}
+
+
+/* 
 
 
 */
 
 /*
 
-ma laon ang ga basa wahahah
+
 
 
 */
