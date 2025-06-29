@@ -140,10 +140,10 @@ void InventorySystem::MainForm2::tableSelectBox_SelectedIndexChanged(System::Obj
 
 
         // Check if the 'ICS NO.' column exists and reorder it
-        if (dataGridView1->Columns->Contains("ICS NO.")) {
+        if (dataGridView1->Columns->Contains("ICS NO")) {
             // Set the display index to place it after the 'DESCRIPTION' column.
             // DESCRIPTION column is at index 1, so we set ICS NO. to be at index 2.
-            dataGridView1->Columns["ICS NO."]->DisplayIndex = 2;
+            dataGridView1->Columns["ICS NO"]->DisplayIndex = 2;
         }
 
         //  Enable text wrapping for "Description" column
@@ -438,7 +438,7 @@ void InventorySystem::MainForm2::AddTBBtn_Click(System::Object^ sender, System::
                 "CREATE TABLE [" + tableName + "] ("
                 "[Article] NVARCHAR(255),"
                 "[DESCRIPTION] NVARCHAR(MAX),"
-                "[ICS NO.] NVARCHAR(255),"
+                "[ICS NO] NVARCHAR(255),"
                 "[Property No#] FLOAT,"
                 "[DATE AQUIRED] DATE,"
                 "[UNIT OF MEASURE] NVARCHAR(255),"
