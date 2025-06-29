@@ -138,6 +138,14 @@ void InventorySystem::MainForm2::tableSelectBox_SelectedIndexChanged(System::Obj
         // Bind data to DataGridView
         dataGridView1->DataSource = dt;
 
+
+        // Check if the 'ICS NO.' column exists and reorder it
+        if (dataGridView1->Columns->Contains("ICS NO.")) {
+            // Set the display index to place it after the 'DESCRIPTION' column.
+            // DESCRIPTION column is at index 1, so we set ICS NO. to be at index 2.
+            dataGridView1->Columns["ICS NO."]->DisplayIndex = 2;
+        }
+
         //  Enable text wrapping for "Description" column
         dataGridView1->Columns["Description"]->DefaultCellStyle->WrapMode = DataGridViewTriState::True;
 
@@ -401,24 +409,6 @@ bool InventorySystem::MainForm2::IsDatabaseConnected() {
 }
 
 
-// Add Table Button for SPHV
-void InventorySystem::MainForm2::AddTBBtnSPHV_Click(System::Object^ sender, System::EventArgs^ e) {
-
-    // Add Only If SPHV Database is Connected - Greyed if Not
-
-    // Add Table format for SPHV
-
-}
-
-
-
-
-
-
-
-
-
-
 
 // Add Table Button
 
@@ -439,21 +429,46 @@ void InventorySystem::MainForm2::AddTBBtn_Click(System::Object^ sender, System::
         String^ selectedDB = dataSelectBox->SelectedItem->ToString();
         String^ connString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=" + selectedDB + ";Integrated Security=True;"; //192.168.3.108
 
-        String^ createTableQuery =
-            "CREATE TABLE [" + tableName + "] ("
-            "[Article] NVARCHAR(255),"
-            "[DESCRIPTION] NVARCHAR(MAX),"
-            "[Property No#] FLOAT,"
-            "[DATE AQUIRED] DATE,"
-            "[UNIT OF MEASURE] NVARCHAR(255),"
-            "[Unit Value] FLOAT,"
-            "[ACCTBLE OFFICER] NVARCHAR(255),"
-            "[LOCATION] NVARCHAR(255),"
-            "[Balance Per Qty#] FLOAT,"
-            "[ON HAND] FLOAT,"
-            "[SHORTAGE/OVER] FLOAT,"
-            "[REMARKS] NVARCHAR(255)"
-            ");";
+        String^ createTableQuery;
+
+        // Check if the selected database is for SPHV
+        if (selectedDB->ToUpper()->Contains("SPHV")) {
+            // SPHV Table Format
+            createTableQuery =
+                "CREATE TABLE [" + tableName + "] ("
+                "[Article] NVARCHAR(255),"
+                "[DESCRIPTION] NVARCHAR(MAX),"
+                "[ICS NO.] NVARCHAR(255),"
+                "[Property No#] FLOAT,"
+                "[DATE AQUIRED] DATE,"
+                "[UNIT OF MEASURE] NVARCHAR(255),"
+                "[Unit Value] FLOAT,"
+                "[ACCTBLE OFFICER] NVARCHAR(255),"
+                "[LOCATION] NVARCHAR(255),"
+                "[Balance Per Qty#] FLOAT,"
+                "[ON HAND] FLOAT,"
+                "[SHORTAGE/OVER] FLOAT,"
+                "[REMARKS] NVARCHAR(255)"
+                ");";
+        }
+        else {
+            // Default Table Format
+            createTableQuery =
+                "CREATE TABLE [" + tableName + "] ("
+                "[Article] NVARCHAR(255),"
+                "[DESCRIPTION] NVARCHAR(MAX),"
+                "[Property No#] FLOAT,"
+                "[DATE AQUIRED] DATE,"
+                "[UNIT OF MEASURE] NVARCHAR(255),"
+                "[Unit Value] FLOAT,"
+                "[ACCTBLE OFFICER] NVARCHAR(255),"
+                "[LOCATION] NVARCHAR(255),"
+                "[Balance Per Qty#] FLOAT,"
+                "[ON HAND] FLOAT,"
+                "[SHORTAGE/OVER] FLOAT,"
+                "[REMARKS] NVARCHAR(255)"
+                ");";
+        }
 
         try {
             SqlConnection^ sqlConn = gcnew SqlConnection(connString);

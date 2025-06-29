@@ -136,7 +136,7 @@ namespace InventorySystem {
 	private: System::Windows::Forms::Label^ labelUser;
 	private: System::Windows::Forms::Label^ labelDesc;
 	private: Guna::UI2::WinForms::Guna2Button^ vAllBtn;
-private: Guna::UI2::WinForms::Guna2Button^ AddTBBtnSPHV;
+
 
 
 	private: System::Windows::Forms::Label^ labelDate;
@@ -149,6 +149,7 @@ private: Guna::UI2::WinForms::Guna2Button^ AddTBBtnSPHV;
 		dataSelectBox->Items->Add("LEE");
 		dataSelectBox->Items->Add("General Fund");
 		dataSelectBox->Items->Add("Trust Fund");
+		dataSelectBox->Items->Add("SPHV");
 
 		// Optional: Set placeholder text
 		dataSelectBox->Text = "Select a Database";
@@ -207,7 +208,6 @@ private: Guna::UI2::WinForms::Guna2Button^ AddTBBtnSPHV;
 			this->labelUser = (gcnew System::Windows::Forms::Label());
 			this->labelDesc = (gcnew System::Windows::Forms::Label());
 			this->vAllBtn = (gcnew Guna::UI2::WinForms::Guna2Button());
-			this->AddTBBtnSPHV = (gcnew Guna::UI2::WinForms::Guna2Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->guna2PictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
@@ -524,7 +524,7 @@ private: Guna::UI2::WinForms::Guna2Button^ AddTBBtnSPHV;
 			this->DelTBBtn->HoverState->Parent = this->DelTBBtn;
 			this->DelTBBtn->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"DelTBBtn.Image")));
 			this->DelTBBtn->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
-			this->DelTBBtn->Location = System::Drawing::Point(728, 95);
+			this->DelTBBtn->Location = System::Drawing::Point(608, 95);
 			this->DelTBBtn->Name = L"DelTBBtn";
 			this->DelTBBtn->ShadowDecoration->Parent = this->DelTBBtn;
 			this->DelTBBtn->Size = System::Drawing::Size(114, 38);
@@ -574,32 +574,11 @@ private: Guna::UI2::WinForms::Guna2Button^ AddTBBtnSPHV;
 			this->vAllBtn->TabIndex = 41;
 			this->vAllBtn->Click += gcnew System::EventHandler(this, &MainForm2::vAllBtn_Click);
 			// 
-			// AddTBBtnSPHV
-			// 
-			this->AddTBBtnSPHV->BackColor = System::Drawing::Color::Transparent;
-			this->AddTBBtnSPHV->BorderRadius = 7;
-			this->AddTBBtnSPHV->CheckedState->Parent = this->AddTBBtnSPHV;
-			this->AddTBBtnSPHV->CustomImages->Parent = this->AddTBBtnSPHV;
-			this->AddTBBtnSPHV->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9, System::Drawing::FontStyle::Bold));
-			this->AddTBBtnSPHV->ForeColor = System::Drawing::Color::White;
-			this->AddTBBtnSPHV->HoverState->Parent = this->AddTBBtnSPHV;
-			this->AddTBBtnSPHV->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"AddTBBtnSPHV.Image")));
-			this->AddTBBtnSPHV->ImageAlign = System::Windows::Forms::HorizontalAlignment::Left;
-			this->AddTBBtnSPHV->Location = System::Drawing::Point(608, 95);
-			this->AddTBBtnSPHV->Name = L"AddTBBtnSPHV";
-			this->AddTBBtnSPHV->ShadowDecoration->Parent = this->AddTBBtnSPHV;
-			this->AddTBBtnSPHV->Size = System::Drawing::Size(114, 38);
-			this->AddTBBtnSPHV->TabIndex = 42;
-			this->AddTBBtnSPHV->Text = L"+ SPHV";
-			this->AddTBBtnSPHV->TextAlign = System::Windows::Forms::HorizontalAlignment::Left;
-			this->AddTBBtnSPHV->Click += gcnew System::EventHandler(this, &MainForm2::AddTBBtnSPHV_Click);
-			// 
 			// MainForm2
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1918, 1072);
-			this->Controls->Add(this->AddTBBtnSPHV);
 			this->Controls->Add(this->vAllBtn);
 			this->Controls->Add(this->labelDesc);
 			this->Controls->Add(this->labelUser);
@@ -717,6 +696,5 @@ private: Guna::UI2::WinForms::Guna2Button^ AddTBBtnSPHV;
 	void AddTBBtn_Click(System::Object^ sender, System::EventArgs^ e);
 	void DelTBBtn_Click(System::Object^ sender, System::EventArgs^ e);
 	void vAllBtn_Click(System::Object^ sender, System::EventArgs^ e);
-	void AddTBBtnSPHV_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }
